@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                x:Class="CadastroEventos.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <LinearGradientBrush x:Key="BackgroundGradient" StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#9381FF" Offset="0.0" />
+                <GradientStop Color="#8C7BAF" Offset="1.0" />
+            </LinearGradientBrush>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Background>
+        <StaticResource Key="BackgroundGradient" />
+    </ContentPage.Background>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30" VerticalOptions="Center">
+            <Label Text="Cadastro de eventos" FontSize="20" HorizontalOptions="Center"/>
+            <Entry Text="{Binding Nome}"/>
+            <Entry Text="{Binding Local}"/>
+
+            <Label Text="Digite a data de início: "/>
+            <DatePicker Date="{Binding DataInicio}"/>
+            <Label Text="Digite a data de término: "/>
+            <DatePicker Date="{Binding DataFim}"/>
+
+            <Entry Text="{Binding NumeroParticipantes}" Placeholder="Digite o número de participantes: " Keyboard="Numeric" x:Name="entryNumeroParticipantes"/>
+            <Entry Text="{Binding CustoParticipante}" Placeholder="Digite o valor por participantes: " Keyboard="Numeric" x:Name="entryCustoParticipante"/>
+
+            <Button Text="Continuar" Clicked="OnContinueClicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
